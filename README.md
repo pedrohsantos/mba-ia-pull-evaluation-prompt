@@ -125,7 +125,19 @@ Notas por exemplo:
 | 14 | complexo | 0.89 | 0.95 | 1.00 |
 | 15 | complexo | 1.00 | 0.85 | 0.93 |
 
-Screenshots do dashboard: [docs/evidencias/](docs/evidencias/)
+### Screenshots
+
+**Experimento v2: médias das 5 métricas ≥ 0.8** (clarity 0.87, correctness 0.92, f1_score 0.90, helpfulness 0.91, precision 0.94; 15/15 runs, 0% de erro)
+
+![Experimento com as notas médias](docs/evidencias/01-experimento-notas.webp)
+
+**Metadados do experimento** (prompt `sapino/bug_to_user_story_v2`, provider `openai`, `gpt-4.1-mini` + juiz `gpt-4.1`)
+
+![Metadados do experimento](docs/evidencias/02-experimento-metadados.webp)
+
+**Dataset de avaliação com os 15 exemplos**
+
+![Dataset com 15 exemplos](docs/evidencias/03-dataset-15-exemplos.png)
 
 ### Histórico de iterações
 
