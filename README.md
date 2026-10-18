@@ -139,6 +139,22 @@ Notas por exemplo:
 
 ![Dataset com 15 exemplos](docs/evidencias/03-dataset-15-exemplos.png)
 
+### Tracing detalhado (3 exemplos)
+
+Cada trace mostra o run `Target`, a chamada `ChatOpenAI` (`gpt-4.1-mini`), as mensagens enviadas (System = prompt v2, User = relato delimitado por `"""`), a User Story gerada e o custo/tokens.
+
+**1. Bug simples: campo de email aceita texto sem @.** O modelo seguiu o esqueleto SIMPLES: story + 5 critérios e nada além.
+
+![Trace do exemplo de email](docs/evidencias/04-trace-email-simples.webp)
+
+**2. Bug complexo: checkout com 4 falhas críticas (XSS, gateway 504, race condition em cupons, loading infinito).** É o maior input do dataset. O modelo aplicou o esqueleto COMPLEXO (nota 0.92 em clarity).
+
+![Trace do exemplo de checkout](docs/evidencias/05-trace-checkout-complexo.webp)
+
+**3. Bug simples: botão "Adicionar ao carrinho" no produto ID 1234.** O trace mostra a saída do modelo ao lado da referência e as 5 notas gravadas como feedback: clarity 0.85, correctness 0.965, f1_score 1.00, helpfulness 0.89 e precision 0.93.
+
+![Trace do exemplo do carrinho com feedback](docs/evidencias/06-trace-carrinho-feedback.webp)
+
 ### Histórico de iterações
 
 Modelos usados: `gpt-4.1-mini` para responder e `gpt-4.1` como juiz (os dois aceitam `temperature=0`, o que deixa a avaliação reproduzível).
